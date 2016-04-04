@@ -32,6 +32,8 @@
         }
     }
     !win32 {
+        $$t_message(QT_QM: $$QT_QM)
+        $$t_message(_PRO_FILE_PWD_: $$_PRO_FILE_PWD_)
         system(cp -f $$QT_QM $$shell_path($$_PRO_FILE_PWD_/translations/))
     }
 
