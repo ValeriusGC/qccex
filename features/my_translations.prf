@@ -9,7 +9,8 @@
   _current_translations = $$TRANSLATIONS
   _current_translations -= $$_old_translations
   _old_translations -= $$TRANSLATIONS
-  _transaltions_diff = $$_old_translations $$_current_translations
+  _transaltions_diff = ALWAYS
+#  _transaltions_diff = $$_old_translations $$_current_translations
   !isEmpty(_transaltions_diff)|!exists($$_PRO_FILE_PWD_/translations.txt)|!exists($$_PRO_FILE_PWD_/translations.qrc) {
     $$t_message(regenerating translations.qrc)
     # создаю translations.qrc
@@ -44,9 +45,8 @@
     # Close resource file and write
     _translations_qrc += </qresource></RCC>$$escape_expand(\n)
     write_file($$_PRO_FILE_PWD_/translations.qrc, _translations_qrc)
-    write_file($$_PRO_FILE_PWD_/translations.txt, TRANSLATIONS);
-
-    QMAKE_CLEAN += $$shell_path($$_PRO_FILE_PWD_/translations.txt)
+#    write_file($$_PRO_FILE_PWD_/translations.txt, TRANSLATIONS);
+#    QMAKE_CLEAN += $$shell_path($$_PRO_FILE_PWD_/translations.txt)
   }
 
     # А НАДО ЛИ ЭТО??

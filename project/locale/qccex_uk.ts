@@ -23,7 +23,7 @@
     <message>
         <location filename="../src/widget.cpp" line="56"/>
         <source>Done!</source>
-        <translation type="unfinished">Спрацювано!</translation>
+        <translation type="unfinished">Спрацювано !</translation>
     </message>
     <message>
         <location filename="../src/widget.cpp" line="64"/>
