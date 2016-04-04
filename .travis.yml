@@ -28,7 +28,7 @@ install:
     fi
 
 script:
-- if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
        QTDIR="/opt/qt54"
     && PATH="$QTDIR/bin:$PATH"
     && qt54-env.sh
@@ -40,4 +40,4 @@ script:
     && CPPFLAGS=-I$QTDIR/include
     ;
   fi
-  - mkdir -p  build/Test && cd build/Test && qmake ../../project/qccex.pro CONFIG+=test && make && cd ../..
+  - mkdir -p  build/Test && cd build/Test && qmake ../../project/qccex.pro CONFIG+=test && make -s -j 2
