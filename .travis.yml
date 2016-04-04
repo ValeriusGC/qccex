@@ -9,6 +9,9 @@ branches:
     - master
     - testing
     - feature/*
+    
+sudo: 
+    required
 
 install:
   - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
