@@ -46,3 +46,14 @@ script:
   - mkdir -p  build/Test
   - cd build/Test
   - qmake ../../project/qccex.pro CONFIG+=test && make -s -j 2
+  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+      if [ "${TRAVIS_BRANCH}" != "master" ]; then
+           qccex-test -platform minimal -txt
+        ;
+      fi
+      ;
+    else
+         ./../bin/tests/tests.app/Contents/MacOS/tests -platform minimal -txt
+      ;
+    fi
+  
