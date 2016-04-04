@@ -1,0 +1,2 @@
+locale/qccex_ru.ts
+locale/qccex_uk.ts
