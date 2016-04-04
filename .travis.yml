@@ -1,0 +1,26 @@
+language: cpp
+
+os:
+  - linux
+
+branches:
+  only:
+    - develop
+    - master
+    - testing
+    - feature/*
+
+script:
+  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+         QTDIR="/opt/qt54"
+      && PATH="$QTDIR/bin:$PATH"
+      && qt54-env.sh 
+      ;
+    else
+         QTDIR="/usr/local/opt/qt5"
+      && PATH="$QTDIR/bin:$PATH"
+      && LDFLAGS=-L$QTDIR/lib
+      && CPPFLAGS=-I$QTDIR/include
+      ;
+    fi
+  - mkdir -p  build/Test && cd build/Test && qmake ../../project/qccex.pro CONFIG+=test && make && cd ../..
