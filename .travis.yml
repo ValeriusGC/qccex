@@ -65,7 +65,7 @@ script:
   - make 
   
 before_deploy:
-  - export VERSION_NUMBER=`cat version.h | sed "s/[^0-9,.]//g"`
+  - export VERSION_NUMBER=`1.0.6`
   # create debian package for linux and a disk image for OSX
   - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
          cd ../travis

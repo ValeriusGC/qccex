@@ -6,6 +6,7 @@
 #include "widget.h"
 #include "settings.h"
 #include "note_defines.h"
+#include "version.h"
 
 using namespace nq;
 
