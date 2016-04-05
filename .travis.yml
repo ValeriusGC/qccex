@@ -61,8 +61,8 @@ script:
   - cd build/Release
   - echo "#define BUILD ""$TRAVIS_BUILD_NUMBER" > build_number.h
   - echo "#define RELEASE \"Travis CI\"" > release.h
-  - qmake ../../project/qccex.pro
-  - make
+  - qmake ../../project/qccex.pro CONFIG+=$CONFIG
+  - make 
   
 before_deploy:
   - export VERSION_NUMBER=`cat version.h | sed "s/[^0-9,.]//g"`
